@@ -33,4 +33,5 @@ app.factory("ImageFactory",function($q, $http, FIREBASE_CONFIG){
 			});
 		});
 	}
+	return {imageList: imageList};
 };

@@ -1,0 +1,36 @@
+{
+  "users": {
+    "user0": {
+      "uid": "",
+      "name": ""
+    },
+    "user1": {
+      "uid": "",
+      "name": ""
+    }
+  },
+  "pins": {
+    "pin0": {
+      "uid": "",
+      "boardId": "",
+      "url": "",
+      "title": ""
+    },
+    "pin1": {
+      "uid": "",
+      "boardId": "",
+      "url": "",
+      "title": ""
+    }
+  },
+  "boards": {
+    "board0": {
+      "uid": "",
+      "title": ""
+    },
+    "board1": {
+      "uid": "",
+      "title": ""
+    }
+  }  
+}

@@ -40,17 +40,12 @@ app.config(function($routeProvider){
 		})
 		.when('/pins/search', {
 			templateUrl:'/partials/searchImgur.html',
-			controller: 'searchCtrl',
+			controller: 'SearchCtrl',
 			resolve: {isAuth} 
 		})
-		// .when('/pins/list', {
-		// 	templateUrl:'/partials/pin-list.html',
-		// 	controller: 'deleteCtrl',
-		// 	resolve: {isAuth} 
-		// })
 		.when('/logout', {
 			templateUrl:'partials/auth.html',
-			controller: 'authCtrl',
+			controller: 'AuthCtrl',
 			resolve: {isAuth} 
 		})
 		.otherwise('/auth');

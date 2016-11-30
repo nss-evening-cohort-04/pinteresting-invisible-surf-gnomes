@@ -3,8 +3,9 @@
 <div class="container">
 	<div class="boardContainer" ng-repeat="board in boards">
 		<h3>Board title</h3>
-		<div>{{board.title}}
-		<button class="btn btn-danger fa fa-trash-o" ng-click="deleteItem(board.id)"></button>	
+		<div>
+			<h3>{{board.title}}<h3>
+			<button class="btn btn-danger fa fa-trash-o" ng-click="deleteItem(board.id)"></button>	
 
 			<div class="pinContainer" ng-repeat="pin in pins">
 				<h3>My Pin</h3>

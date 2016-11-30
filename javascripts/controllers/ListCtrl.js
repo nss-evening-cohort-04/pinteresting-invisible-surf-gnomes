@@ -7,7 +7,7 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory){
 	let getBoards = function(){
 		BoardFactory.getBoardsFB($rootScope.user.uid).then(function(boardsFB){
 			console.log("boards from controller", boardsFB);
-			$scope.board = boardsFB;
+			$scope.boards = boardsFB;
 		});
 	};
 	getBoards();	

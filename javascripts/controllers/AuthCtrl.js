@@ -1,6 +1,6 @@
 "use strict"; 
 
-app.controller("AuthCtrl", function($scope, $location, $rootScope, AuthFactory, UserFactory){
+app.controller("AuthCtrl", function($scope, $location, $rootScope, AuthFactory, UserFactory, BoardFactory){
 
 	$scope.signInContainer = true;
 	$scope.registerContainer = false;

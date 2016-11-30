@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("SearchCtrl", function($scope, $rootScope, $location, ImageFactory){
+app.controller("SearchCtrl", function($scope, $rootScope, $location, ImageFactory, PinFactory){
 	$scope.newPin = {};
 	$scope.searchImgur= '';
 	$scope.searchResults = [];

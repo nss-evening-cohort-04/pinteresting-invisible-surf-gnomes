@@ -35,7 +35,7 @@ app.config(function($routeProvider){
 		})
 		.when('/pins/list', {
 			templateUrl:'/partials/pin-list.html',
-			controller: 'listCtrl',
+			controller: 'ListCtrl',
 			resolve: {isAuth} 
 		})
 		.when('/pins/search', {
@@ -43,11 +43,11 @@ app.config(function($routeProvider){
 			controller: 'searchCtrl',
 			resolve: {isAuth} 
 		})
-		.when('/pins/list', {
-			templateUrl:'/partials/pin-list.html',
-			controller: 'deleteCtrl',
-			resolve: {isAuth} 
-		})
+		// .when('/pins/list', {
+		// 	templateUrl:'/partials/pin-list.html',
+		// 	controller: 'deleteCtrl',
+		// 	resolve: {isAuth} 
+		// })
 		.when('/logout', {
 			templateUrl:'partials/auth.html',
 			controller: 'authCtrl',

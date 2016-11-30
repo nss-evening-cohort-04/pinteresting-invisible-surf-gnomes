@@ -34,4 +34,12 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory
 		});
 	};
 	getPins();
+
+	let deletePin = function(pinId){
+		console.log("delete item", pinId);
+		PinFactory.deletePin(pinId).then(function(deletePinResponse){
+			console.log("delete pin response", deletePinResponse);
+			getPins();
+		});
+	};
 });

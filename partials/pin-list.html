@@ -1,0 +1,12 @@
+<h3>My Boards</h3>
+
+<div class="container">
+	<div ng-repeat="board in boards">
+		<h3>Board name</h3>
+		<div>{{board.name}}</div>
+
+		<div ng-repeat="pin in pins">
+			<button class="btn btn-danger fa fa-trash-o" ng-click="deletePin(pin.id)"></button>
+		</div>
+	</div>
+</div>

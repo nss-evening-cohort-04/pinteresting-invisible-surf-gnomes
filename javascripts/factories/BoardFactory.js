@@ -32,8 +32,20 @@ app.factory("BoardFactory",function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
+	var deleteBoardFB = function(boardId){
+		return $q((resolve, reject)=>{
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/boards/${boardId}.json`)
+			.success(function(postResponse){
+				resolve(postResponse);
+			}).error(function(postError){
+				reject(postError);
+			});
+		});
+	};
+
 	return {
 		getBoardsFB: getBoardsFB, 
-		postBoardsFB: postBoardsFB
+		postBoardsFB: postBoardsFB,
+		deleteBoardFB:deleteBoardFB
 	};
 });

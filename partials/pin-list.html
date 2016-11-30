@@ -4,9 +4,9 @@
 	<div class="row boardContainer" ng-repeat="board in boards">
 		<div class="col-sm-4">
 			<div class="card">
-				<div class="card-block">
-					<div class="card-title text-center"><span class="h2">{{board.title}}</span> <button class="btn btn-danger fa fa-trash-o pull-right" ng-click="deleteItem(board.id)"></button></div>
-						<div class="cardContainer">
+				<div class="cardContainer">
+					<div class="card-block">
+						<div class="card-title text-center"><span class="h2">{{board.title}}</span> <button class="btn btn-danger fa fa-trash-o pull-right" ng-click="deleteItem(board.id)"></button></div>
 							<h3>My Pins</h3>
 							<div class="row pinContainer" ng-repeat="pin in pins">
 								<div class="col-sm-4">
@@ -18,7 +18,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+					</div>						
 				</div>	
 			</div>
 		</div>

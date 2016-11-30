@@ -38,6 +38,11 @@ app.config(function($routeProvider){
 			controller: 'ListCtrl',
 			resolve: {isAuth} 
 		})
+		.when('/pins/add', {
+			templateUrl:'/partials/add-board.html',
+			controller: 'AddBoardCtrl',
+			resolve: {isAuth} 
+		})
 		.when('/pins/search', {
 			templateUrl:'/partials/searchImgur.html',
 			controller: 'SearchCtrl',

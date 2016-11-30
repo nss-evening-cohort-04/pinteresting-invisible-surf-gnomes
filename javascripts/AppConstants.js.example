@@ -7,3 +7,8 @@ app.constant("FIREBASE_CONFIG", {
     storageBucket: "",
     messagingSenderId: ""
 });
+
+app.constant("IMGURAPIKEY", {
+	client_secret: "",
+	client_id:""
+});

@@ -3,7 +3,7 @@
 
 app.factory("PinFactory", function($q, $http, FIREBASE_CONFIG){
 
-	var getPins = function(userId){
+	var getPinsFB = function(userId){
 		return $q((resolve, reject)=>{
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/pins.json?orderBy="uid"&equalTo="${userId}"`)
 			 .success( (response)=>{
@@ -50,5 +50,7 @@ app.factory("PinFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	return {getPins: getPins,postPin: postPin,deletePin: deletePin};
+	return {getPinsFB: getPinsFB,
+			postPin: postPin,
+			deletePin: deletePin};
 });

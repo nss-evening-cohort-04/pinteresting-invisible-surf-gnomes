@@ -2,7 +2,7 @@
 
 let ImgurApiKeys = {};
 
-app.factory("ImageFactory",function($q, $http, IMGURAPIKEY){
+app.factory("ImageFactory",function($q, $http, FIREBASE_CONFIG, IMGURAPIKEY){
 
 	let imageList = (searchText) => {
 		return $q ((resolve, reject)=>{
@@ -16,12 +16,12 @@ app.factory("ImageFactory",function($q, $http, IMGURAPIKEY){
 					},
 					url:`https://api.imgur.com/3/gallery/t/${searchText}`
 				}).then( (response) => {
-					console.log('imgur response', response);
-					// resolve(response.data.items);
+					// console.log('imgur response', response.data.data.items);
+					resolve(response.data.data.items);
 
 				}, (errorResponse) => {
-					console.log('imgur fail', errorResponse);
-					// reject(errorResponse2);
+					// console.log('imgur fail', errorResponse);
+					reject(errorResponse);
 				});	
 		});
 	};

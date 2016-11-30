@@ -8,11 +8,11 @@ app.controller("NavCtrl", function($scope){ // NAV CONTROLLER LINE 4 holds a arr
 	},
 	{
 		name:"All Items",
-		url: "#/items/list"
+		url: "#/pins/list"
 	},
 	{
 		name:"New Item",
-		url:"#items/new"
+		url:"#pins/new"
 	}
 	];
 });

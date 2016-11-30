@@ -4,23 +4,27 @@ app.config(function($routeProvider){
 	$routeProvider
 		.when('/auth', {
 			templateUrl:'partials/auth.html',
-			controller: 'authCtrl'
+			controller: 'AuthCtrl'
 		})
-		.when('/pins/', {
-			templateUrl:'partials/searchImgur.html',
-			controller: 'searchCtrl'
+		.when('/pins/list', {
+			templateUrl:'/partials/pin-list.html',
+			controller: 'listCtrl',
+			resolve: {isAuth} 
 		})
-		.when('', {
-			templateUrl:'partials/.html',
-			controller: 'Ctrl'
+		.when('/pins/search', {
+			templateUrl:'/partials/searchImgur.html',
+			controller: 'searchCtrl',
+			resolve: {isAuth} 
 		})
-		.when('', {
-			templateUrl:'partials/.html',
-			controller: 'Ctrl'
+		.when('/pins/list', {
+			templateUrl:'/partials/pin-list.html',
+			controller: 'deleteCtrl',
+			resolve: {isAuth} 
 		})
 		.when('/logout', {
 			templateUrl:'partials/auth.html',
-			controller: 'authCtrl'
+			controller: 'authCtrl',
+			resolve: {isAuth} 
 		})
 		.otherwise('/');
 });

@@ -14,9 +14,9 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory
 	};
 	getBoards();	
 
-	$scope.deleteItem = function(boardId){
+	$scope.deleteBoard = function(boardId){
 		console.log("delete item", boardId);
-		BoardFactory.deletePin(boardId).then(function(response){
+		BoardFactory.deleteBoardFB(boardId).then(function(response){
 			getBoards();
 		});
 	};

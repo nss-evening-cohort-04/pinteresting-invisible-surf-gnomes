@@ -2,14 +2,14 @@
 
 app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory){
 	
-	$scope.boards = [];
+	$rootScope.boards = [];
 	$scope.pins = [];
 
 	//Boards
 	let getBoards = function(){
 		BoardFactory.getBoardsFB($rootScope.user.uid).then(function(boardsFB){
 			console.log("boards from controller", boardsFB);
-			$scope.boards = boardsFB;
+			$rootScope.boards = boardsFB;
 		});
 	};
 	getBoards();	
@@ -34,6 +34,7 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory
 		});
 	};
 	getPins();
+
 
 	$scope.deletePin = function(pinId){
 		console.log("delete pin", pinId);

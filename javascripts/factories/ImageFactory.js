@@ -2,7 +2,7 @@
 
 let ImgurApiKeys = {};
 
-app.factory("ImageFactory",function($q, $http, FIREBASE_CONFIG, IMGURAPIKEY){
+app.factory("ImageFactory",function($q, $http, FIREBASE_CONFIG, IMGURAPIKEY, PinFactory, BoardFactory){
 
 	let imageList = (searchText) => {
 		return $q ((resolve, reject)=>{

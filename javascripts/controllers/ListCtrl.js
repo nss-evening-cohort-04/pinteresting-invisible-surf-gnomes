@@ -15,7 +15,7 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory
 	getBoards();	
 
 	$scope.deleteBoard = function(boardId){
-		console.log("delete item", boardId);
+		console.log("delete board", boardId);
 		BoardFactory.deleteBoardFB(boardId).then(function(response){
 			getBoards();
 		});
@@ -36,7 +36,7 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory
 	getPins();
 
 	let deletePin = function(pinId){
-		console.log("delete item", pinId);
+		console.log("delete pin", pinId);
 		PinFactory.deletePin(pinId).then(function(deletePinResponse){
 			console.log("delete pin response", deletePinResponse);
 			getPins();

@@ -25,4 +25,3 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory){
 	};
 
 });
-

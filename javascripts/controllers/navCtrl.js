@@ -12,7 +12,7 @@ app.controller("NavCtrl", function($scope){ // NAV CONTROLLER LINE 4 holds a arr
 	},
 	{
 		name:"New Item",
-		url:"#pins/new"
+		url:"#/pins/search"
 	}
 	];
 });

@@ -6,7 +6,7 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 		return $q((resolve, reject)=>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/users.json`, JSON.stringify({
 				uid: authData.uid,
-				name: authData.name
+				username: authData.username
 			}))
 			.success(function(postResponse){
 				resolve(postResponse);
@@ -31,6 +31,5 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 			});
 		});
 	};
-
-
+return {postUser: postUser, getUser: getUser};
 });

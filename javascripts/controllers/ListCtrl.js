@@ -35,7 +35,7 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory
 	};
 	getPins();
 
-	let deletePin = function(pinId){
+	$scope.deletePin = function(pinId){
 		console.log("delete pin", pinId);
 		PinFactory.deletePin(pinId).then(function(deletePinResponse){
 			console.log("delete pin response", deletePinResponse);

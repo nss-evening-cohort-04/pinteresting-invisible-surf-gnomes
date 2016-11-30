@@ -5,19 +5,19 @@
       "username": "jess"
     },
     "user1": {
-      "uid": "",
-      "username": ""
+      "uid": "GpFg8u2krjM5sAz2LnlPbEO8kgJ2",
+      "username": "a"
     }
   },
   "pins": {
     "pin0": {
-      "uid": "Nroz0n45idNJVemsV4zxRSaZiOR2",
+      "uid": "GpFg8u2krjM5sAz2LnlPbEO8kgJ2",
       "boardId": "",
       "url": "",
       "title": "Roses"
     },
     "pin1": {
-      "uid": "Nroz0n45idNJVemsV4zxRSaZiOR2",
+      "uid": "GpFg8u2krjM5sAz2LnlPbEO8kgJ2",
       "boardId": "",
       "url": "",
       "title": "Lexis"
@@ -25,11 +25,11 @@
   },
   "boards": {
     "board0": {
-      "uid": "Nroz0n45idNJVemsV4zxRSaZiOR2",
+      "uid": "GpFg8u2krjM5sAz2LnlPbEO8kgJ2",
       "title": "Gardening"
     },
     "board1": {
-      "uid": "Nroz0n45idNJVemsV4zxRSaZiOR2",
+      "uid": "GpFg8u2krjM5sAz2LnlPbEO8kgJ2",
       "title": "Cars"
     }
   }  

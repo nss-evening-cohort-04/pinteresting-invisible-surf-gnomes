@@ -1,26 +1,28 @@
 "use strict";
 
-app.controller("ListCtrl", function($scope, $rootScope, ImageFactory){
-	$scope.items=[];
+app.controller("ListCtrl", function($scope, $rootScope, BoardFactory){
+	
+	$scope.boards = [];
 
-	// let getItems = function(){
-	// 	ItemFactory.getItemList($rootScope.user.uid).then(function(fbItems){
-	// 		$scope.items = fbItems;
-	// 	});
-	// };
+	let getBoards = function(){
+		BoardFactory.getBoardsFB($rootScope.user.uid).then(function(boardsFB){
+			console.log("boards from controller", boardsFB);
+			$scope.board = boardsFB;
+		});
+	};
+	getBoards();	
 
-	// getItems();
+	$scope.deleteItem = function(boardId){
+		console.log("delete item", boardId);
+		BoardFactory.deletePin(boardId).then(function(response){
+			getBoards();
+		});
+	};
 
-	// $scope.deleteItem = function(itemId){
-	// 	console.log("you deleted me", itemId);
-	// 	ItemFactory.deleteItem(itemId).then(function(resonse){
-	// 		getItems();
-	// 	});
-	// };
+	$scope.inputChange = function(thingy){
+		BoardFactory.editItem(thingy).then(function(response){
+		});
+	};
 
-	// $scope.inputChange = function(thingy){
-	// 	ItemFactory.editItem(thingy).then(function(response){
-	// 	});
-	// };
 });
 

@@ -31,5 +31,6 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 			});
 		});
 	};
+	
 return {postUser: postUser, getUser: getUser};
 });

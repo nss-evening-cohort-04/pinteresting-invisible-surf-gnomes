@@ -26,22 +26,7 @@ app.factory("ImageFactory",function($q, $http, FIREBASE_CONFIG, IMGURAPIKEY, Pin
 		});
 	};
 
-	let deletePin = function(pinId){
-		return $q((resolve, reject)=>{
 
-			$http.delete(`${FIREBASE_CONFIG.databaseURL}/pins/${pinId}.json`)
-			.success(function(deleteResponse){
-				resolve(deleteResponse);
-			})
-			.error(function(deleteError){
-				reject(deleteError);
-			});
-		});
-	};
-
-
-	return {imageList: imageList,
-					deletePin: deletePin
-	};
+	return {imageList: imageList};
 });
 

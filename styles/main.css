@@ -13,3 +13,7 @@
 /* Add some padding inside the card container */
 .cardContainer {
   padding: 2px 16px; }
+
+img {
+  width: 200px;
+  height: 200px; }

@@ -2,14 +2,14 @@
 
 app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory){
 	
-	$rootScope.boards = [];
+	$scope.boards = [];
 	$scope.pins = [];
 
 	//Boards
 	let getBoards = function(){
 		BoardFactory.getBoardsFB($rootScope.user.uid).then(function(boardsFB){
 			console.log("boards from controller", boardsFB);
-			$rootScope.boards = boardsFB;
+			$scope.boards = boardsFB;
 		});
 	};
 	getBoards();	
@@ -32,13 +32,13 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory
 			console.log("pins from controller", pinsFB);
 			$scope.pins = pinsFB;
 			pinsFB.forEach(function(pin){
-				$rootScope.boards.forEach(function(board){
-					console.log('hello')
+				$scope.boards.forEach(function(board){
+					console.log('hello');
 					if(pin.boardId === board.id){
 						board.pins.push(pin);
 					}
-				})
-			})
+				});
+			});
 
 
 		});

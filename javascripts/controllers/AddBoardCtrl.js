@@ -11,5 +11,4 @@ app.controller("AddBoardCtrl", function($scope, $rootScope, $location, BoardFact
 			$scope.newBoard = {};
 		});
 	};
-
 });

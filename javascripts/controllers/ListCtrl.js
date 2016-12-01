@@ -10,6 +10,19 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory
 		BoardFactory.getBoardsFB($rootScope.user.uid).then(function(boardsFB){
 			console.log("boards from controller", boardsFB);
 			$scope.boards = boardsFB;
+			PinFactory.getPinsFB($rootScope.user.uid).then(function(pinsFB){
+			console.log("pins from controller", pinsFB);
+			pinsFB.forEach(function(pin){
+				$scope.boards.forEach(function(board){
+					//console.log('pins', pin);
+					if(pin.boardId === board.id){
+						board.pins.push(pin);
+					}
+				});
+			});
+
+
+		});
 		});
 	};
 	getBoards();	
@@ -21,36 +34,17 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory
 		});
 	};
 
-	$scope.inputChange = function(thingy){
-		BoardFactory.editItem(thingy).then(function(response){
-		});
-	};
+	
 
 	//Pins
-	let getPins = function(){
-		PinFactory.getPinsFB($rootScope.user.uid).then(function(pinsFB){
-			console.log("pins from controller", pinsFB);
-			$scope.pins = pinsFB;
-			pinsFB.forEach(function(pin){
-				$scope.boards.forEach(function(board){
-					console.log('hello');
-					if(pin.boardId === board.id){
-						board.pins.push(pin);
-					}
-				});
-			});
-
-
-		});
-	};
-	getPins();
+	
 
 
 	$scope.deletePin = function(pinId){
 		console.log("delete pin", pinId);
 		PinFactory.deletePin(pinId).then(function(deletePinResponse){
 			console.log("delete pin response", deletePinResponse);
-			getPins();
+			getBoards();
 		});
 	};
 });

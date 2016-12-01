@@ -31,6 +31,16 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory
 		PinFactory.getPinsFB($rootScope.user.uid).then(function(pinsFB){
 			console.log("pins from controller", pinsFB);
 			$scope.pins = pinsFB;
+			pinsFB.forEach(function(pin){
+				$rootScope.boards.forEach(function(board){
+					console.log('hello')
+					if(pin.boardId === board.id){
+						board.pins.push(pin);
+					}
+				})
+			})
+
+
 		});
 	};
 	getPins();

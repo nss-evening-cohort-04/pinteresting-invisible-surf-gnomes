@@ -16,8 +16,8 @@ app.factory("ImageFactory",function($q, $http, FIREBASE_CONFIG, IMGURAPIKEY, Pin
 				},
 				url:`https://api.imgur.com/3/gallery/t/${searchText}`
 			}).then( (response) => {
-				// console.log('imgur response', response.data.data.items);
-				resolve(response.data.items);
+				console.log('imgur response', response.data.data.items);
+				resolve(response.data.data.items);
 
 			}, (errorResponse) => {
 				// console.log('imgur fail', errorResponse);

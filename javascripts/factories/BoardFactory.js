@@ -9,6 +9,7 @@ app.factory("BoardFactory",function($q, $http, FIREBASE_CONFIG){
 				let boards = [];
 				Object.keys(response).forEach(function(key){
 					response[key].id = key;
+					response[key].pins = [];
 					boards.push(response[key]);
 				});
 				resolve(boards);

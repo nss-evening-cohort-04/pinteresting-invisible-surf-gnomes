@@ -20,10 +20,10 @@ app.factory("PinFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	var postPin = function(postPin, boardId){
+	var postPin = function(postPin){
 		return $q((resolve, reject)=>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/pins.json`, JSON.stringify({
-				boardId: boardId,
+				boardId: postPin.boardId,
 				title: postPin.title,
 				uid: postPin.uid,
 				url: postPin.url

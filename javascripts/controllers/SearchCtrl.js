@@ -11,7 +11,9 @@ app.controller("SearchCtrl", function($scope, $rootScope, $location, ImageFactor
 	
 	$scope.ImgurSearch = function(){
 		ImageFactory.imageList($scope.searchImgur).then(function(response){
+			console.log("response", response);
 			$scope.searchResults = response;
+
 			console.log('search results: ', $scope.searchResults);
 		});
 	};
@@ -22,10 +24,11 @@ app.controller("SearchCtrl", function($scope, $rootScope, $location, ImageFactor
 	};
 
 	//pin to board
-	$scope.postPin = function(newPin, boardId) {
+	$scope.postPin = function() {
 		$scope.newPin.uid = uid;
-		PinFactory.postPin($scope.newPin, boardId).then(function(postPinResponse){
+		PinFactory.postPin($scope.newPin).then(function(postPinResponse){
 			console.log("new pin id", postPinResponse);
+			angular.element('#newPinModal').modal('hide');
 			$location.url("/pins/search");
 			$scope.newPin = {};
 		});

@@ -31,6 +31,7 @@ app.factory("BoardFactory",function($q, $http, FIREBASE_CONFIG){
 	    });
   	};
 
+
 	var postBoardsFB = function(newBoard){
 		return $q((resolve, reject)=>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/boards.json`, JSON.stringify({

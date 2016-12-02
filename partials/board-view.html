@@ -1,17 +1,15 @@
-<h3>My Boards</h3>
-
 <div class="container">
 	<div class="row">
-		<div class="boardContainer" ng-repeat="board in boards">
-			<div class="col-sm-4">
+		<div class="boardContainer">
+			<div class="col-sm-12">
 				<div class="card">
 					<div class="cardContainer">
 						<div class="card-block">
-							<div class="card-title text-center"><a href="#/boards/view/{{board.id}}"><span class="h2">{{board.title}}</span></a> <button class="btn btn-danger fa fa-trash-o pull-right" ng-click="deleteBoard(board.id)"></button></div>
+							<div class="card-title text-center"><span class="h2">{{selectedBoard.title}}</span> <button class="btn btn-danger fa fa-trash-o pull-right" ng-click="deleteBoard(board.id)"></button></div>
 								<h3>My Pins</h3>
 								<div class="row">
-									<div class="pinContainer" ng-repeat="pin in board.pins">
-										<div class="col-sm-4">
+									<div class="pinContainer" ng-repeat="pin in selectedBoard.pins">
+										<div class="col-sm-3">
 											<div class="panel panel-default">		
 												<div  class="panel-heading text-center">{{pin.title}}</div>
 												<div class="panel-body">

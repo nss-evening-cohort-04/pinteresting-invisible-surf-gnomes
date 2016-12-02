@@ -19,6 +19,18 @@ app.factory("BoardFactory",function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
+	var getSingleBoard = function(boardId){
+	    return $q((resolve, reject) => {
+	      $http.get(`${FIREBASE_CONFIG.databaseURL}/boards/${boardId}.json`)
+	      .success(function(getSingleResponse){
+	        resolve(getSingleResponse);
+	      })
+	      .error(function(getSingleError){
+	        reject(getSingleError);
+	      });
+	    });
+  	};
+
 	var postBoardsFB = function(newBoard){
 		return $q((resolve, reject)=>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/boards.json`, JSON.stringify({
@@ -47,6 +59,7 @@ app.factory("BoardFactory",function($q, $http, FIREBASE_CONFIG){
 	return {
 		getBoardsFB: getBoardsFB, 
 		postBoardsFB: postBoardsFB,
-		deleteBoardFB:deleteBoardFB
+		deleteBoardFB:deleteBoardFB,
+		getSingleBoard:getSingleBoard
 	};
 });

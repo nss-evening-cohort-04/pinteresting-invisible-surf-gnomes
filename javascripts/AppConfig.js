@@ -43,6 +43,11 @@ app.config(function($routeProvider){
 			controller: 'AddBoardCtrl',
 			resolve: {isAuth} 
 		})
+		.when('/boards/view/:id', {
+			templateUrl:'/partials/board-view.html',
+			controller: 'ViewBoardCtrl',
+			resolve: {isAuth}
+		})
 		.when('/pins/search', {
 			templateUrl:'/partials/searchImgur.html',
 			controller: 'SearchCtrl',

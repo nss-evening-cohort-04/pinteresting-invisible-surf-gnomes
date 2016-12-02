@@ -3,13 +3,12 @@
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Search for ..." ng-model="searchImgur">
             <span class="input-group-btn">
-                <button class="btn btn-default fa fa-search" ng-click="ImgurSearch()"></button>
+                <button class="btn btn-default fa fa-search" ng-click="ImgurSearch()" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Wait for it....." id="searchBtn"></button>
             </span>
         </div>
     </div>
 </div>
-<div class="row">
-	<div ng-repeat="image in searchResults"><img src="{{image.link}}" class="col-sm-3 img-thumbnail img-rounded img-responsive" ng-click="setPinUrl(image.link)" data-toggle="modal" data-target="#newPinModal"></img></div>
+<div class="row" id="imgurReturn">
 </div>
 
 

@@ -21,6 +21,9 @@ img{
 	width: 200px;
 	height: 200px;
 }
+img:hover{
+    cursor: pointer;
+}
 
 .title {
     font-family: 'Lobster', cursive;

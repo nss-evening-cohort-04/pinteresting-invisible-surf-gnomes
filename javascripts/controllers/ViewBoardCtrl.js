@@ -27,7 +27,7 @@ app.controller("ViewBoardCtrl", function($scope, $location, $routeParams, $rootS
 	});
 
 
-	$scope.deleteBoard = function(boardId){
+	$scope.deleteBoard = function($routeParams){
 		console.log("delete board", boardId);
 		BoardFactory.deleteBoardFB(boardId).then(function(response){
 			$location.url("/pins/list");
@@ -42,14 +42,20 @@ app.controller("ViewBoardCtrl", function($scope, $location, $routeParams, $rootS
 		PinFactory.deletePin(pinId).then(function(deletePinResponse){
 			console.log("delete pin response", deletePinResponse);
 			//haven't tested yet, should refresh pins after delete.
-			//get pins for selectedBoard
-			PinFactory.getPinsFB($rootScope.user.uid).then(function(pinsFB){
-			console.log("pins from controller", pinsFB);
-				pinsFB.forEach(function(pin){			
-					if(pin.boardId === boardId){
-						console.log('pins-boardId', pin);
-						$scope.pins.push(pin);
-					}
+			//getSelectedBoard
+			BoardFactory.getSingleBoard(boardId).then(function(board){
+				console.log('board: ', board);
+				$scope.selectedBoard.id = boardId;
+				$scope.selectedBoard = board;
+				//get pins for selectedBoard
+				PinFactory.getPinsFB($rootScope.user.uid).then(function(pinsFB){
+				console.log("pins from controller", pinsFB);
+					pinsFB.forEach(function(pin){			
+						if(pin.boardId === boardId){
+							console.log('pins-boardId', pin);
+							$scope.pins.push(pin);
+						}
+					});
 				});
 			});
 		});

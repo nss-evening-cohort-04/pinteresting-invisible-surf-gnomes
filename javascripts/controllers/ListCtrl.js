@@ -11,18 +11,16 @@ app.controller("ListCtrl", function($scope, $rootScope, BoardFactory, PinFactory
 			console.log("boards from controller", boardsFB);
 			$scope.boards = boardsFB;
 			PinFactory.getPinsFB($rootScope.user.uid).then(function(pinsFB){
-			console.log("pins from controller", pinsFB);
-			pinsFB.forEach(function(pin){
-				$scope.boards.forEach(function(board){
-					//console.log('pins', pin);
-					if(pin.boardId === board.id){
-						board.pins.push(pin);
-					}
+				console.log("pins from controller", pinsFB);
+				pinsFB.forEach(function(pin){
+					$scope.boards.forEach(function(board){
+						//console.log('pins', pin);
+						if(pin.boardId === board.id){
+							board.pins.push(pin);
+						}
+					});
 				});
 			});
-
-
-		});
 		});
 	};
 	getBoards();	

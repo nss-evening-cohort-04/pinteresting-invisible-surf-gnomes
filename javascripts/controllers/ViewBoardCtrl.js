@@ -42,12 +42,13 @@ app.controller("ViewBoardCtrl", function($scope, $location, $routeParams, $rootS
 		PinFactory.deletePin(pinId).then(function(deletePinResponse){
 			console.log("delete pin response", deletePinResponse);
 			//haven't tested yet, should refresh pins after delete.
+			//get pins for selectedBoard
 			PinFactory.getPinsFB($rootScope.user.uid).then(function(pinsFB){
-				console.log("pins from controller", pinsFB);
+			console.log("pins from controller", pinsFB);
 				pinsFB.forEach(function(pin){			
-					console.log('pins', pin);
-					if(pin.boardId === $scope.selectedBoard.id){
-					$scope.selectedBoard.pins.push(pin);
+					if(pin.boardId === boardId){
+						console.log('pins-boardId', pin);
+						$scope.pins.push(pin);
 					}
 				});
 			});

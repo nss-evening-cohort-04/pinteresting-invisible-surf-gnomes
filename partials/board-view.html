@@ -8,9 +8,9 @@
 							<div class="card-title text-center"><span class="h2">{{selectedBoard.title}}</span> <button class="btn btn-danger fa fa-trash-o pull-right" ng-click="deleteBoard(board.id)"></button></div>
 								<h3>My Pins</h3>
 								<div class="row">
-									<div class="pinContainer" ng-repeat="pin in selectedBoard.pins">
+									<div class="pinContainer">
 										<div class="col-sm-3">
-											<div class="panel panel-default">		
+											<div class="panel panel-default" ng-repeat="pin in pins">
 												<div  class="panel-heading text-center">{{pin.title}}</div>
 												<div class="panel-body">
 													<img class="img-responsive" src="{{pin.url}}" alt=""/>

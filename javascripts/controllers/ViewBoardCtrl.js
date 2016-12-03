@@ -5,6 +5,7 @@ app.controller("ViewBoardCtrl", function($scope, $location, $routeParams, $rootS
 	$scope.selectedBoard = {};
 	$scope.pins = [];
 	let boardId = $routeParams.id;
+	$scope.boardId=$routeParams.id;
 
 
 
@@ -17,9 +18,9 @@ app.controller("ViewBoardCtrl", function($scope, $location, $routeParams, $rootS
 		PinFactory.getPinsFB($rootScope.user.uid).then(function(pinsFB){
 		console.log("pins from controller", pinsFB);
 			pinsFB.forEach(function(pin){			
-				console.log('pins', pin);
-				if(pin.boardId === $scope.selectedBoard.id){
-					$scope.selectedBoard.pins.push(pin);
+				if(pin.boardId === boardId){
+					console.log('pins-boardId', pin);
+					$scope.pins.push(pin);
 				}
 			});
 		});

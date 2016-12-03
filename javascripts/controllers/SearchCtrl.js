@@ -21,7 +21,6 @@ app.controller("SearchCtrl", function($scope, $rootScope, $location, ImageFactor
 		ImageFactory.imageList($scope.searchImgur).then(function(response){
 			$('#searchBtn').button('reset');
 			$scope.searchResults = response;
-			$('#imgurReturn').append('<div ng-repeat="image in searchResults"><img src="{{image.link}}" class="col-sm-3 img-thumbnail img-rounded img-responsive" ng-click="setPinUrl(image.link)" data-toggle="modal" data-target="#newPinModal"></img></div>');
 		}).catch((error) => {
 			$('#searchBtn').button('reset');
 			$('#imgurReturn').append('<div class="alert alert-danger"><strong>Error!<strong>'+ error.statusText +'</div>');

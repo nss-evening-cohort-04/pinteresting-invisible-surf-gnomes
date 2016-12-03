@@ -9,11 +9,11 @@ app.controller("NavCtrl", function($scope, $rootScope){ // NAV CONTROLLER LINE 4
 		url: "#/logout"
 	},
 	{
-		name:"All Items",
+		name:"All Boards",
 		url: "#/pins/list"
 	},
 	{
-		name:"New Item",
+		name:"New Pin",
 		url:"#/pins/search"
 	},
 	{
